@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  padding: 0;
+  margin: calc((100vh / 25) * 1.563) calc((100vw / 25) * 1.563);
+  font-weight: 400;
+  line-height: 1.563;
+  color: var(--color);
+  background-color: var(--background-color);
+  caret-color: var(--caret-color);
+}
+
+h1 {
+  color: rgb(114, 109, 109);
+  font-size: 64px;
+  font-family: "Playfair Display", serif;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+h2 {
+  color: rgb(114, 109, 109);
+  font-size: 40px;
+  margin-left: 20px;
+  font-family: "Playfair Display", serif;
+}
+h3 {
+  margin-left: 20px;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+
+/* Navigation Menu Styling */
+.mainNav {
+  background-color: #f7f7f7;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainNav a {
+  text-decoration: none;
+}
+
+.mainNav h1 {
+  margin: 0;
+  font-size: 48px;
+  text-decoration: none;
+}
+
+ul.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+ul.menu li {
+  display: inline;
+}
+
+ul.menu li a {
+  text-decoration: none;
+  color: rgb(114, 109, 109);
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ul.menu li a:hover {
+  background-color: rgb(114, 109, 109);
+  color: white;
+  border-radius: 5px;
+}
+
+/* Category List Styling */
+.kategoriliste {
+  margin-left: 20px;
+  margin-top: 20px;
+  display: grid; /* Skifter til grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 kolonner med lige stor bredde */
+  gap: 20px; /* Mellemrum mellem boksene */
+}
+
+.kategoriliste a {
+  text-decoration: none; /* Fjerner streg under link */
+  color: rgb(114, 109, 109);
+  font-size: 24px; /* Større skriftstørrelse */
+  background-color: #f0f0f0;
+  border-radius: 10px; /* Giver bokse afrundede hjørner */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex; /* Brug Flexbox til at centrere indhold */
+  justify-content: center; /* Centrerer vandret */
+  align-items: center; /* Centrerer lodret */
+  height: 150px; /* Fast højde for ensartede bokse */
+  text-align: center; /* Centrerer teksten */
+}
+
+.kategoriliste a:hover {
+  background-color: rgb(114, 109, 109);
+  color: white;
+}
+.product-grid {
+  display: flex; /* Aktivér flexbox layout */
+  flex-wrap: wrap; /* Tillad wrapping til nye linjer hvis nødvendigt */
+  gap: 20px; /* Plads mellem boksene */
+  margin: 20px; /* Margin omkring grid containeren */
+}
+article {
+  display: block;
+  unicode-bidi: isolate;
+}
+.productlist main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 290px));
+  gap: 2rem;
+}
+.productlist main h2 {
+  grid-column: 1 / -1;
+}
+.productlist article {
+  margin-bottom: 1rem;
+}
+.productlist article {
+  display: flex;
+  flex-direction: column;
+}
+.productlist article > * {
+  margin: 0;
+  font-size: 0.9rem;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.productlist article h3 {
+  font-size: 1rem;
+  flex-grow: 3;
+}
+.subtle {
+  color: var(--text-decoration-color);
+}
+.productlist article .discounted,
+.productlist article .price span {
+  display: none;
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--text-decoration-color);
+  -webkit-text-decoration-color: var(--text-decoration-color);
+  border-radius: 5px;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.productlist article.onSale .discounted {
+  display: flex;
+  justify-content: space-between;
+}
+.productlist article.soldOut::before {
+  content: "Sold Out";
+  position: absolute;
+  background: var(--color);
+  color: var(--background-color);
+  padding: 1rem;
+}
+.productlist article.soldOut img {
+  opacity: 0.5;
+}
+
+/* Forbedring af købskasse */
+
+/* Opdatering af formatering for knapper */
+button {
+  background-color: #726d6d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Bedre styling til dropdown-menu */
+select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+dl {
+  margin: 20px; /* Justér som nødvendigt */
+}
+
+/* Justér dt for at give det noget afstand */
+dt {
+  font-weight: bold; /* Gør det tydeligere */
+  margin-bottom: 5px; /* Lidt plads under dt */
+  color: rgb(114, 109, 109);
+}
+
+/* Fjern indrykning og giv dd plads under dt */
+dd {
+  margin: 0; /* Fjern standard margin */
+  margin-bottom: 20px; /* Afstand til næste dt-dd par */
+  padding-left: 0; /* Fjern indrykning */
+}
+
+label {
+  margin-left: 20px;
+}

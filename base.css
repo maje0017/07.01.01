@@ -1,0 +1,190 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a:hover {
+  color: #279af1;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: center;
+  font-family: "Prosto One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+}
+/* Burger menu */
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: 0.2s linear;
+}
+
+.smallProduct {
+  flex: 1 1 calc(25% - 20px); /* Gør boksene fleksible med 4 kolonner, minus gap */
+  box-sizing: border-box; /* Inkluder padding og border i total bredde */
+  border: 1px solid #ddd; /* Valgfrit: Tilføj kant */
+  padding: 15px; /* Indvendig afstand i boksene */
+  border-radius: 5px; /* Valgfrit: Runde hjørner */
+  background-color: #fff; /* Baggrundsfarve på boksene */
+  display: flex; /* Aktivér flexbox for indholdet i boksene */
+  flex-direction: column; /* Arranger indholdet lodret i boksene */
+  align-items: center; /* Center indhold horisontalt */
+}
+
+.smallProduct h1 {
+  font-size: 36px;
+}
+
+.smallProduct img {
+  max-width: 100%; /* Billede fylder hele boksens bredde */
+  height: auto; /* Behold billedets aspektforhold */
+  margin-bottom: 15px; /* Plads mellem billede og tekst */
+  border-radius: 5px; /* Valgfrit: Runde hjørner på billedet */
+}
+
+.smallProduct {
+  text-align: center; /* Center tekst i produktinfo */
+}
+.smallProduct {
+  flex: 1 1 calc(25% - 20px); /* Gør boksene fleksible med 4 kolonner, minus gap */
+  box-sizing: border-box; /* Inkluder padding og border i total bredde */
+  border: 1px solid #ddd; /* Valgfrit: Tilføj kant */
+  padding: 15px; /* Indvendig afstand i boksene */
+  border-radius: 5px; /* Valgfrit: Runde hjørner */
+  background-color: #fff; /* Baggrundsfarve på boksene */
+  display: flex; /* Aktivér flexbox for indholdet i boksene */
+  flex-direction: column; /* Arranger indholdet lodret i boksene */
+  align-items: center; /* Center indhold horisontalt */
+}
+
+.smallProduct h1 {
+  font-size: 36px;
+}
+
+.smallProduct img {
+  max-width: 100%; /* Billede fylder hele boksens bredde */
+  height: auto; /* Behold billedets aspektforhold */
+  margin-bottom: 15px; /* Plads mellem billede og tekst */
+  border-radius: 5px; /* Valgfrit: Runde hjørner på billedet */
+}
+
+.smallProduct {
+  text-align: center; /* Center tekst i produktinfo */
+}
+
+.pris {
+  font-size: 24px;
+  color: #726d6d;
+}
+
+.discount-price {
+  font-size: 28px;
+  color: #d9534f;
+}
+
+.discount-price span {
+  color: #5bc0de;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #d9534f; /* Baggrundsfarve for knappen */
+  color: #fff; /* Tekstfarve på knappen */
+  padding: 10px 20px; /* Indvendig afstand på knappen */
+  text-decoration: none; /* Fjern understregning på knappen */
+  border-radius: 5px; /* Runde hjørner på knappen */
+  display: inline-block; /* Gør knappen til et inline-element */
+  margin-top: 10px; /* Plads over knappen */
+}
+
+.button:hover {
+  background-color: #c9302c; /* Mørkere baggrundsfarve ved hover */
+}
+
+@media screen and (max-width: 800px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f6f3f0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  nav.active .menu {
+    display: flex;
+  }
+
+  nav.active .menu li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  nav.active .menu a {
+    font-size: 1.2rem;
+  }
+}
