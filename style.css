@@ -30,13 +30,13 @@ html {
 }
 
 /*Category*/
-.kategoriliste {
+.categorylist {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
 }
 
-.kategoriliste a {
+.categorylist a {
   text-decoration: none;
   padding: 2em;
   color: white;

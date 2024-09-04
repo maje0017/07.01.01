@@ -1,29 +1,34 @@
-const urlParams = new URLSearchParams(window.location.search);
-const category = urlParams.get("category");
+window.addEventListener("DOMContentLoaded", hentData);
 
-fetch("https://kea-alt-del.dk/t7/api/products?category=" + category)
-  .then((res) => res.json())
-  .then(showProducts);
+const url = `https://kea-alt-del.dk/t7/api/products?limit=15`;
+const skabelon = document.querySelector("template").content;
+const container = document.querySelector("main");
 
-function showProducts(products) {
-  //Looper og kalder showProduct
-  products.forEach(showProduct);
+function hentData() {
+  fetch(url)
+    .then((res) => res.json())
+    .then((produkter) => visProdukter(produkter));
 }
 
-function showProduct(product) {
-  console.log(product);
-  //Fang template
-  const template = document.querySelector("#smallProductTemplate").content;
-  //Lav en kopi
-  const copy = template.cloneNode(true);
-  //ændre indhold
-  copy.querySelector("h3").textContent = product.productdisplayname;
-  if (product.soldout) {
-    copy.querySelector("article").classList.add("soldOut");
-  }
+function visProdukter(produkter) {
+  produkter.forEach((produkt) => {
+    const kopi = skabelon.cloneNode(true);
+    kopi.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${produkt.id}.webp`;
+    kopi.querySelector("img").alt = produkt.productdisplayname;
+    kopi.querySelector("h3").textContent = produkt.productdisplayname;
+    kopi.querySelector(".price span").textContent = produkt.price;
+    kopi.querySelector("a").href = `product.html?id=${produkt.id}`;
+    if (produkt.soldout) {
+      kopi.querySelector("article").classList.add("soldOut");
+    }
+    if (produkt.discount) {
+      kopi.querySelector("article").classList.add("onSale");
+      kopi.querySelector(".discounted p span").textContent = Math.round(produkt.price - (produkt.price * produkt.discount) / 100);
+      kopi.querySelector(".discounted p+p span").textContent = produkt.discount;
+    }
 
-  // appende
-  document.querySelector("main").appendChild(copy);
+    container.appendChild(kopi);
+  });
 }
 
 /*
