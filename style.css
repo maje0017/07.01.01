@@ -117,11 +117,74 @@ ul.menu li a:hover {
   background-color: rgb(114, 109, 109);
   color: white;
 }
-.product-grid {
-  display: flex; /* Aktivér flexbox layout */
-  flex-wrap: wrap; /* Tillad wrapping til nye linjer hvis nødvendigt */
-  gap: 20px; /* Plads mellem boksene */
-  margin: 20px; /* Margin omkring grid containeren */
+
+.product main {
+  display: grid;
+}
+.product main .breadcrumbs,
+.product main img {
+  grid-column: 1 / -1;
+}
+.breadcrumbs {
+  display: none;
+}
+ol,
+ul {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 1.563rem;
+}
+ol {
+  list-style: decimal outside;
+}
+.purchaseBox {
+  background: #d8d8d8;
+  color: var(--background-color);
+  padding: 1rem;
+}
+section {
+  display: block;
+  unicode-bidi: isolate;
+}
+.purchaseBox form label {
+  gap: 1rem;
+}
+label {
+  font-weight: bold;
+  display: flex;
+}
+.product select {
+  min-width: 100px;
+}
+select {
+  -webkit-appearance: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid var(--input-border-color);
+  border-radius: 10px;
+  color: var(--input-color);
+  height: 2.5rem;
+  background-color: var(--input-background-color);
+  background-image: var(--select-background-image);
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: center right 0.5rem;
+}
+.purchaseBox button {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+}
+.info {
+  padding: 1rem;
+}
+dl {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
 }
 article {
   display: block;
