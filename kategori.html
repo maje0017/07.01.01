@@ -21,17 +21,27 @@
             <li><a href="produkt.html">Produkt</a></li>
         </ul>
     </header>
-    <main>
-        <h2>Categories</h2>
-        <section class="categorylist">
-            <a href="produktliste.html">Accessories</a>
-            <a href="produktliste.html">Apparel</a>
-            <a href="produktliste.html">Footwear</a>
-            <a href="produktliste.html">Free Items</a>
-            <a href="produktliste.html">Personal Care</a>
-            <a href="produktliste.html">Sporting Goods</a>
-        </section>
-    </main>
+    <h1>Categories</h1>
+    <ul id="categoryList"></ul>
+    <h2>Product List</h2>
+
+    <template id="productTemplate">
+        <li>
+            <div class="flex">
+                <div>
+                    <p><strong>Category:</strong> <span class="category"></span></p>
+                    <p><strong>Price:</strong> <span class="price"></span></p>
+                    <p><strong>Brand:</strong> <span class="brand"></span></p>
+                    <a id="seemore" href="">See more</a>
+                </div>
+                <div id="soldoutLabel" class="hidden">UDSOLGT</div>
+            </div>
+            <img src="" />
+        </li>
+    </template>
+
+    <!-- TEMPLATE RENDER CONTAINER -->
+    <ul id="productContainer"></ul>
     <script src="category.js"></script>
 </body>
 
